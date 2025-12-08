@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProductViwer from "@/components/ProductViwer";
+import ShowCase from "@/components/ShowCase";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProductViwer />
+      <ShowCase />
     </main>
   );
 }
