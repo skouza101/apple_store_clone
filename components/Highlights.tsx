@@ -21,7 +21,7 @@ const Highlights = () => {
       duration: 1,
       ease: "power1.inOut",
     });
-  }, [isMobile]); // Added dependency to re-run if media query changes, though scroll trigger might need a refresh.
+  }, [isMobile]);
 
   return (
     <section id="highlights">

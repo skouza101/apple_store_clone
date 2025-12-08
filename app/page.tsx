@@ -9,6 +9,8 @@ import Features from "@/components/Features";
 
 import Highlights from "@/components/Highlights";
 
+import Footer from "@/components/Footer";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -21,6 +23,7 @@ export default function Home() {
       <Performance />
       <Highlights />
       <Features />
+      <Footer />
     </main>
   );
 }
