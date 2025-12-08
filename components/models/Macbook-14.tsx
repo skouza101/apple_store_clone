@@ -1,11 +1,9 @@
-
-
 import * as THREE from "three";
 import React, { JSX, useEffect } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
-import { GLTF } from "three-stdlib";
 import useMacBookStore from "@/store";
 import { noChangeParts } from "@/constants";
+import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -66,9 +64,12 @@ export default function MacBookModel14(
 
   useEffect(() => {
     scene.traverse((child: THREE.Object3D) => {
-      if (child.isMesh) {
-        if (!noChangeParts.includes(child.name)) {
-          child.material.color = new THREE.Color(color);
+      const mesh = child as THREE.Mesh;
+      if (mesh.isMesh) {
+        if (!noChangeParts.includes(mesh.name)) {
+          (mesh.material as THREE.MeshStandardMaterial).color = new THREE.Color(
+            color
+          );
         }
       }
     });

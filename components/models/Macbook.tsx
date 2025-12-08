@@ -1,5 +1,3 @@
-
-
 import * as THREE from "three";
 import { JSX, useEffect } from "react";
 import { useGLTF, useVideoTexture } from "@react-three/drei";
@@ -50,20 +48,23 @@ type GLTFResult = GLTF & {
     sfCQkHOWyrsLmor: THREE.MeshStandardMaterial;
     ZCDwChwkbBfITSW: THREE.MeshStandardMaterial;
   };
-  animations: GLTFAction[];
+  animations: THREE.AnimationClip[];
 };
 
 export default function MacBookModel(props: JSX.IntrinsicElements["group"]) {
   const { color, texture } = useMacBookStore();
   const { nodes, materials, scene } = useGLTF(
     "/models/macbook-transformed.glb"
-  ) as GLTFResult;
+  ) as unknown as GLTFResult;
   const screen = useVideoTexture(texture);
   useEffect(() => {
     scene.traverse((child: THREE.Object3D) => {
-      if (child.isMesh) {
-        if (!noChangeParts.includes(child.name)) {
-          child.material.color = new THREE.Color(color);
+      const mesh = child as THREE.Mesh;
+      if (mesh.isMesh) {
+        if (!noChangeParts.includes(mesh.name)) {
+          (mesh.material as THREE.MeshStandardMaterial).color = new THREE.Color(
+            color
+          );
         }
       }
     });

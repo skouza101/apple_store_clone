@@ -1,5 +1,3 @@
-
-
 import * as THREE from "three";
 import React, { JSX, useEffect } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
@@ -57,20 +55,23 @@ export default function MacBookModel16(
   props: JSX.IntrinsicElements["group"] & { itemColor?: string }
 ) {
   const { color } = useMacBookStore();
-  const { nodes, materials , scene } = useGLTF(
+  const { nodes, materials, scene } = useGLTF(
     "/models/Macbook-16-transformed.glb"
   ) as unknown as GLTFResult;
   const texture = useTexture("/screen.png");
 
-useEffect(()=>{
+  useEffect(() => {
     scene.traverse((child: THREE.Object3D) => {
-      if(child.isMesh){
-        if(!noChangeParts.includes(child.name)){
-          child.material.color = new THREE.Color(color);
+      const mesh = child as THREE.Mesh;
+      if (mesh.isMesh) {
+        if (!noChangeParts.includes(mesh.name)) {
+          (mesh.material as THREE.MeshStandardMaterial).color = new THREE.Color(
+            color
+          );
         }
       }
-    })
-  },[color])
+    });
+  }, [color]);
 
   React.useEffect(() => {
     // Enhance materials for realistic metal look
