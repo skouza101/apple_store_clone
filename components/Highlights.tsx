@@ -25,15 +25,11 @@ const Highlights = () => {
 
   return (
     <section id="highlights">
-      <h2>There’s never been a better time to upgrade.</h2>
-      <h3>Here’s what you get with the new MacBook Pro.</h3>
+      <h2>Theres never been a better time to upgrade.</h2>
+      <h3>Heres what you get with the new MacBook Pro.</h3>
 
       <div className="masonry">
-        <div className="left-column opacity-0 translate-y-20">
-          {" "}
-          {/* added initial state classes if tailwind is used, otherwise gsap handles it but having it initially hidden handles FOUC */}
-          {/* Note: The user code assumed specific classes for styling. I will keep the structure exactly as requested but ensure standard imports are present. */}
-          <div>
+        <div className="left-column opacity-0 translate-y-20"> <div>
             <img src="/laptop.png" alt="Laptop" />
             <p>Fly through demanding tasks up to 9.8x faster.</p>
           </div>
