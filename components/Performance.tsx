@@ -37,7 +37,7 @@ const Performance = () => {
         defaults: { duration: 2, ease: "power1.inOut", overwrite: "auto" },
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top bottom",
+          start: "center bottom",
           end: "center center",
           scrub: 1,
           invalidateOnRefresh: true,
@@ -65,16 +65,14 @@ const Performance = () => {
       <h2>Next-level graphics performance. Game on.</h2>
 
       <div className="wrapper">
-        {performanceImages
-          .filter((item) => item.id !== "p5")
-          .map((item, index) => (
-            <img
-              key={index}
-              src={item.src}
-              className={item.id}
-              alt={`Performance Image #${index + 1}`}
-            />
-          ))}
+        {performanceImages.map((item, index) => (
+          <img
+            key={index}
+            src={item.src}
+            className={item.id}
+            alt={`Performance Image #${index + 1}`}
+          />
+        ))}
       </div>
 
       <div className="content">
