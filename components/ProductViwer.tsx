@@ -5,6 +5,12 @@ import clsx from "clsx";
 import StudioLight from "./StudioLight";
 import ModelSwitcher from "./three/ModelSwitcher";
 import { useMediaQuery } from "react-responsive";
+import { useGLTF } from "@react-three/drei";
+
+// Preload all MacBook models
+useGLTF.preload("/models/macbook-transformed.glb");
+useGLTF.preload("/models/Macbook-14-transformed.glb");
+useGLTF.preload("/models/Macbook-16-transformed.glb");
 
 const ProductViwer = () => {
   const { color, scale, setColor, setScale } = useMacBookStore();
