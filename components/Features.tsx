@@ -8,6 +8,7 @@ import { Html } from "@react-three/drei";
 import MacbookModel from "./models/Macbook";
 import { useMediaQuery } from "react-responsive";
 import useMacbookStore from "@/store";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -112,7 +113,7 @@ const Features = () => {
             key={feature.id}
             className={clsx("box", `box${index + 1}`, feature.styles)}
           >
-            <img src={feature.icon} alt={feature.highlight} />
+            <Image src={feature.icon} alt={feature.highlight} width={50} height={50} />
             <p>
               <span className="text-white">{feature.highlight}</span>
               {feature.text}

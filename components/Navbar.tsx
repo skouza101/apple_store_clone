@@ -1,5 +1,6 @@
 
 import { navLinks } from "@/constants"
+import Image from "next/image"
 
 
 
@@ -7,7 +8,7 @@ const Navbar = () => {
   return (
     <header>
             <nav>
-                <img  src="/logo.svg" alt="Apple logo" />
+                <Image src="/logo.svg" alt="Apple logo" width={120} height={40} />
 
                 <ul>
                     {navLinks.map(({ label }) => (
@@ -19,10 +20,10 @@ const Navbar = () => {
 
                 <div className="flex-center gap-3">
                     <button>
-                        <img src="/search.svg" alt="Search" />
+                        <Image src="/search.svg" alt="Search" width={24} height={24} />
                     </button>
                     <button>
-                        <img src="/cart.svg" alt="Cart" />
+                        <Image src="/cart.svg" alt="Cart" width={24} height={24} />
                     </button>
                 </div>
             </nav>

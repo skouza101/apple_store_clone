@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { performanceImages, performanceImgPositions } from "@/constants";
 import { useMediaQuery } from "react-responsive";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,11 +67,13 @@ const Performance = () => {
 
       <div className="wrapper">
         {performanceImages.map((item, index) => (
-          <img
+          <Image
             key={index}
             src={item.src}
             className={item.id}
             alt={`Performance Image #${index + 1}`}
+            width={400}
+            height={300}
           />
         ))}
       </div>

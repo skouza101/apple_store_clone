@@ -68,7 +68,7 @@ export default function MacBookModel(props: JSX.IntrinsicElements["group"]) {
         }
       }
     });
-  }, [color]);
+  }, [color, scene]);
   return (
     <group {...props} dispose={null}>
       <mesh

@@ -1,4 +1,5 @@
 import { footerLinks } from "@/constants";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -6,15 +7,15 @@ const Footer = () => {
       <div className="info">
         <p>
           More ways to shop: Find an Apple Store or other retailer near you. Or
-          call 000800 040 1966.
+          call +212 766087705.
         </p>
-        <img src="/logo.svg" alt="Apple logo" />
+        <Image src="/logo.svg" alt="Apple logo" width={120} height={40} />
       </div>
 
       <hr />
 
       <div className="links">
-        <p>Copyright © 2024 Apple Inc. All rights reserved.</p>
+        <p>Copyright © 2025 Apple Inc. All rights reserved.</p>
 
         <ul>
           {footerLinks.map(({ label, link }) => (

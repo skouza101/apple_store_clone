@@ -1,5 +1,6 @@
 "use client"
 import { useRef , useEffect } from "react"
+import Image from "next/image"
 const Hero = () => {
     const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -13,7 +14,7 @@ const Hero = () => {
     <section id="hero">
         <div className="">
             <h1>MacBook Pro</h1>
-            <img src="/title.png" alt="hero" />
+            <Image src="/title.png" alt="hero" width={600} height={100} />
         </div>
         <div className="">
             <video src="/videos/hero.mp4" autoPlay muted playsInline ref={videoRef} />

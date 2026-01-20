@@ -71,7 +71,7 @@ export default function MacBookModel16(
         }
       }
     });
-  }, [color]);
+  }, [color, scene]);
 
   React.useEffect(() => {
     // Enhance materials for realistic metal look

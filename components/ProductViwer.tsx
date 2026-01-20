@@ -1,9 +1,7 @@
 "use client";
 import useMacBookStore from "@/store";
-import { Box, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
-import MacBookModel14 from "./models/Macbook-14";
 import StudioLight from "./StudioLight";
 import ModelSwitcher from "./three/ModelSwitcher";
 import { useMediaQuery } from "react-responsive";

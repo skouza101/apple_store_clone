@@ -3,6 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,11 +31,11 @@ const Highlights = () => {
 
       <div className="masonry">
         <div className="left-column opacity-0 translate-y-20"> <div>
-            <img src="/laptop.png" alt="Laptop" />
+            <Image src="/laptop.png" alt="Laptop" width={300} height={200} />
             <p>Fly through demanding tasks up to 9.8x faster.</p>
           </div>
           <div>
-            <img src="/sun.png" alt="Sun" />
+            <Image src="/sun.png" alt="Sun" width={100} height={100} />
             <p>
               A stunning <br />
               Liquid Retina XDR <br />
@@ -44,14 +45,14 @@ const Highlights = () => {
         </div>
         <div className="right-column opacity-0 translate-y-20">
           <div className="apple-gradient">
-            <img src="/ai.png" alt="AI" />
+            <Image src="/ai.png" alt="AI" width={100} height={100} />
             <p>
               Built for <br />
               <span>Apple Intelligence.</span>
             </p>
           </div>
           <div>
-            <img src="/battery.png" alt="Battery" />
+            <Image src="/battery.png" alt="Battery" width={100} height={100} />
             <p>
               Up to
               <span className="green-gradient"> 14 more hours </span>
